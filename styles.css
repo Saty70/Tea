@@ -16,6 +16,7 @@ body {
 }
 
 .container {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,6 +103,7 @@ body {
 }
 
 footer {
+    color: black;
     background-color: whitesmoke;
     width: 100%;
     position: fixed;
@@ -109,6 +111,35 @@ footer {
     bottom: 0;
     font-size: small;
     text-align: center;
+}
+
+.casaroul {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.gallery {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% / 2));
+    }
+}
+
+.gallery img {
+    flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+    margin-right: 20px;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 /* Media Queries for Responsiveness */
@@ -134,6 +165,11 @@ footer {
         min-width: 130px;
         max-width: 170px;
         font-size: 1rem;
+    }
+
+    .gallery img {
+        width: 250px;
+        height: 250px;
     }
 }
 
